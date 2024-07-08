@@ -5,17 +5,20 @@ import '../models/product.dart';
 class Products with ChangeNotifier {
   final List<Product> _availables = [
     Product(
-        id: 1,
-        title: 'Rock 06 White/Sky',
-        image: '1.jpg',
-        price: 3049.0,
-        description: 'Rock 06 White/Sky Goldstar Sneakers For Men'),
+      id: 1,
+      title: 'Rock 06 White/Sky',
+      image: '1.jpg',
+      price: 3049.0,
+      description: 'Rock 06 White/Sky Goldstar Sneakers For Men',
+      isFav: true,
+    ),
     Product(
-        id: 2,
-        title: 'Rock 06 White/Grey',
-        image: '2.jpg',
-        price: 3049.0,
-        description: 'Rock 06 White/Grey Goldstar Sneakers For Men'),
+      id: 2,
+      title: 'Rock 06 White/Grey',
+      image: '2.jpg',
+      price: 3049.0,
+      description: 'Rock 06 White/Grey Goldstar Sneakers For Men',
+    ),
     Product(
         id: 3,
         title: 'Rock 06 White',
@@ -84,4 +87,9 @@ class Products with ChangeNotifier {
         description: 'River 05 Goldstar White Sneakers For Women'),
   ];
   List<Product> get availables => _availables;
+
+  void toggleFav(Product product) {
+    product.isFav = !product.isFav;
+    notifyListeners();
+  }
 }

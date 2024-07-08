@@ -16,9 +16,11 @@ class Cart with ChangeNotifier {
     _total += product.price;
     notifyListeners();
   }
+
   void deleteItem(Product product) {
     _products.remove(product);
     _total -= product.price;
     notifyListeners();
   }
+
 }
