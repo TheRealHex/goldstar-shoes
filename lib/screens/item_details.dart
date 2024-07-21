@@ -18,10 +18,7 @@ class ItemDetails extends StatelessWidget {
           iconTheme: const IconThemeData(color: Colors.blueGrey),
           title: Text(
             product.title,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.blueGrey,
-            ),
+            style: Theme.of(context).primaryTextTheme.titleMedium,
           ),
           actions: [
             IconButton(
@@ -46,21 +43,15 @@ class ItemDetails extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  product.title,
-                  style: const TextStyle(
-                      color: Colors.blueGrey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
+                  'Shoe: ${product.title}',
+                  style: Theme.of(context).primaryTextTheme.titleMedium,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 15.0, horizontal: 10),
                   child: Text(
                     product.description,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black54,
-                    ),
+                    style: Theme.of(context).primaryTextTheme.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
                 ),

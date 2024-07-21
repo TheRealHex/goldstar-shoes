@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldstar_shoes/components/drawer.dart';
 import 'package:provider/provider.dart';
 
 import '../models/cart.dart';
@@ -14,19 +15,10 @@ class Home extends StatelessWidget {
     return Consumer2<Cart, Products>(
       builder: (context, cart, product, child) {
         return Scaffold(
+          drawer: const MyDrawer(),
           appBar: AppBar(
             title: const Text(
               'GoldStar Shoes',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.blueGrey,
-              ),
-            ),
-            scrolledUnderElevation: 0,
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            iconTheme: const IconThemeData(
-              color: Colors.blueGrey,
             ),
             actions: [
               Padding(
@@ -118,9 +110,7 @@ class Home extends StatelessWidget {
                               Image.asset(
                                   'assets/images/${availables[index].image}'),
                               Positioned(
-                                // right: 5,
-                                bottom: -25,
-                                top: 30,
+                                bottom: 45,
                                 child: Icon(
                                   availables[index].isFav
                                       ? Icons.favorite

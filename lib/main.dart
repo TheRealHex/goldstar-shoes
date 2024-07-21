@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goldstar_shoes/theme/style.dart';
 import 'package:provider/provider.dart';
 
 import 'models/cart.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: myTheme,
       debugShowCheckedModeBanner: false,
       // home: Home(),
       routes: {

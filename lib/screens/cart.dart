@@ -12,27 +12,14 @@ class CartPage extends StatelessWidget {
       return Scaffold(
         bottomNavigationBar: Container(
           height: 60,
-          color: Colors.blueGrey,
+          color: Colors.blueGrey[200],
           child: Center(
-            child: Text(
-              'Checkout (Rs. ${cart.total})',
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16),
-            ),
+            child: Text('Checkout (Rs. ${cart.total})',
+                style: Theme.of(context).primaryTextTheme.bodyMedium),
           ),
         ),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: const IconThemeData(color: Colors.blueGrey),
-          title: const Text(
-            'Cart',
-            style:
-                TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey),
-          ),
-          centerTitle: true,
-          // scrolledUnderElevation: 0,
+          title: const Text('Cart'),
         ),
         body: Container(
           color: Colors.white,
@@ -51,10 +38,7 @@ class CartPage extends StatelessWidget {
                       child: ListTile(
                         title: Text(
                           cart.cartItems[index].title,
-                          style: const TextStyle(
-                            color: Colors.blueGrey,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).primaryTextTheme.titleSmall,
                           maxLines: 1,
                         ),
                         subtitle: Text(
