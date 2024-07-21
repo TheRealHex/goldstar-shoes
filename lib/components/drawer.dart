@@ -10,13 +10,18 @@ class MyDrawer extends StatelessWidget {
       color: Colors.white,
       width: MediaQuery.sizeOf(context).width / 2.5,
       child: const Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(height: 30),
           DrawerBtn(text: 'Home'),
+          DrawerBtn(text: 'New*'),
+          DrawerBtn(text: 'Men'),
+          DrawerBtn(text: 'Women'),
           DrawerBtn(text: 'Purchases'),
           DrawerBtn(text: 'Wishlist'),
           DrawerBtn(text: 'Settings'),
+          SizedBox(height: 30),
         ],
       ),
     );

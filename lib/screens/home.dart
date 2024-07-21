@@ -99,7 +99,7 @@ class Home extends StatelessWidget {
                                   onPressed: () =>
                                       cart.addItem(availables[index]),
                                   icon: const Icon(
-                                    Icons.add_shopping_cart,
+                                    Icons.add,
                                     color: Colors.blueGrey,
                                     size: 16,
                                   )),

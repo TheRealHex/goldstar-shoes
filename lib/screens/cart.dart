@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/cart.dart';
+import 'item_details.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -35,29 +36,36 @@ class CartPage extends StatelessWidget {
                     color: Colors.blueGrey[100],
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: ListTile(
-                        title: Text(
-                          cart.cartItems[index].title,
-                          style: Theme.of(context).primaryTextTheme.titleSmall,
-                          maxLines: 1,
+                      child: GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => ItemDetails(
+                                    product: cart.cartItems[index]))),
+                        child: ListTile(
+                          title: Text(
+                            cart.cartItems[index].title,
+                            style:
+                                Theme.of(context).primaryTextTheme.titleSmall,
+                            maxLines: 1,
+                          ),
+                          subtitle: Text(
+                            cart.cartItems[index].price.toString(),
+                            style: const TextStyle(color: Colors.blueGrey),
+                          ),
+                          leading: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                                'assets/images/${cart.cartItems[index].image}'),
+                          ),
+                          trailing: IconButton(
+                              onPressed: () =>
+                                  cart.deleteItem(cart.cartItems[index]),
+                              icon: const Icon(
+                                Icons.remove_shopping_cart,
+                                color: Colors.blueGrey,
+                                size: 20,
+                              )),
                         ),
-                        subtitle: Text(
-                          cart.cartItems[index].price.toString(),
-                          style: const TextStyle(color: Colors.blueGrey),
-                        ),
-                        leading: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                              'assets/images/${cart.cartItems[index].image}'),
-                        ),
-                        trailing: IconButton(
-                            onPressed: () =>
-                                cart.deleteItem(cart.cartItems[index]),
-                            icon: const Icon(
-                              Icons.remove_shopping_cart,
-                              color: Colors.blueGrey,
-                              size: 20,
-                            )),
                       ),
                     ),
                   ),
